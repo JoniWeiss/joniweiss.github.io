@@ -32,8 +32,11 @@ h1 {
   color: rgb(136,176,75);
 }
 
+/**********************************************************     Header Styles
+**********************************************************/
+
 header{
-  padding: calc(4vw + 4vh) 0 0 0;
+  padding: 30px;
   color: #515B87;
 }
 
@@ -43,25 +46,15 @@ header{
   text-align: center;
 }
 
-#footer {
-  background-color: #4e4e4f;
-  color: whitesmoke;
-  text-align: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-p, a {
-  font-size: 1.5em;
-}
-#logo {
-  padding-top: calc(2vw + 2vh);
+#logo,
+.navbar-brand {
+  padding-top: 5vh;
 }
 
 #logo-title {
   font-family: 'Sansita', sans-serif;
   color: rgba(136,176,75,1);
-  font-size: 3.5em;
+  font-size: 5vw;
   text-shadow:
   1px 1px 0 #CCC,
   2px 2px 0 #CCC, /* end of 2 level deep grey shadow */
@@ -79,6 +72,7 @@ p, a {
 /* Override Bootstrap values */
 .navbar-default .navbar-nav>li>a {
     color: whitesmoke;
+    min-height: 10vh;
 }
 
 .navbar-default .navbar-nav>li>a:hover,
@@ -90,8 +84,43 @@ p, a {
 #navbar {
   font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
-  padding-top: calc(2vw + 2vh);
-  padding-bottom: calc(1vw + 1vh);
+  padding-top: 5vh;
+  padding-bottom: 2vh;
+}
+
+@media only screen and (max-device-width: 900px) {
+  .navbar-default .navbar-nav>li>a {
+      color: whitesmoke;
+      min-height: 10vw;
+  }
+
+  #logo {
+    padding-top: 0;
+  }
+
+  #logo-title {
+    font-family: 'Sansita', sans-serif;
+    color: rgba(136,176,75,1);
+    font-size: 5vw;
+    text-shadow:
+    1px 1px 0 #CCC,
+    2px 2px 0 #CCC, /* end of 2 level deep grey shadow */
+    3px 3px 0 #444,
+    4px 4px 0 #444,
+    5px 5px 0 #444,
+    6px 6px 0 #444; /* end of 4 level deep dark shadow */
+  }
+}
+
+/**********************************************************     Main Content Styles
+**********************************************************/
+p, a {
+  font-size: 1.5em;
+}
+
+main {
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
 .anchor {
@@ -101,10 +130,10 @@ p, a {
   visibility: hidden;
 }
 
-/**********************************************************     META ENTRIES
+/******************************************************         Main Content -- Meta Section
       Code & CSS in this section heavily influenced by
       MetaSean (http://metasean.info).
-**********************************************************/
+*******************************************************/
 ul.meta, ul.meta li ul {
     list-style: none;
 }
@@ -143,7 +172,8 @@ ul.meta li a:link, ul.meta li a:visited, ul.meta li a:hover, ul.meta li a:active
 
 ul.meta li a:link span.title, ul.meta li a:visited span.title {
     display: inline-block;
-    width: 7em;
+    width: 30vw;
+    max-width: 7em;
     text-align: center;
     vertical-align: top;
     border: thin solid #4e4e4f;
@@ -153,7 +183,8 @@ ul.meta li a:link span.title, ul.meta li a:visited span.title {
 
 ul.meta li a:hover span.title, ul.meta li a:active span.title {
     display: inline-block;
-    width: 7em;
+    width: 30vw;
+    max-width: 7em;
     text-align: center;
     vertical-align: top;
     background-color: #4e4e4f;
@@ -162,7 +193,7 @@ ul.meta li a:hover span.title, ul.meta li a:active span.title {
 
 ul.meta li a span.text {
     display: inline-block;
-    width: calc(100% - 7.5em);
+    width: 50vw;
     vertical-align: bottom;
 }
 
@@ -176,13 +207,18 @@ ul.meta li a:hover, ul.meta li a:active {
     border: thin solid #4e4e4f;
 }
 
+/******************************************************         Main Content -- Project Section
+*******************************************************/
 .project-links {
   display: inline-block;
 }
 
-@media only screen and (min-device-width: 480px) {
-  main {
-    margin-left: 10vw;
-    margin-right: 10vw;
-  }
+/**********************************************************     Footer Styles
+**********************************************************/
+#footer {
+  background-color: #4e4e4f;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
