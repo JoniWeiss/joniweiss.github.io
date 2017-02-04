@@ -26,11 +26,12 @@ Temporary Items
 .apdisk
 
 
-### Node ###
+### Node & Yarn ###
 # Logs
 logs
 *.log
 npm-debug.log*
+yarn.lock
 
 # Runtime data
 pids

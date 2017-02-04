@@ -1,98 +1,188 @@
-:root { /* CSS Variables */
-  /* font vars */
-  --heading-font: 'Mirza', cursive;
-  --text-font: 'Open Sans', sans-serif;
-
-  /* Color Pallet vars: */
-  /* Pantone Ethereal Material Pallet: Greenery (#88B04B) */
-  --accent-color: #88B04B;
-  --nav-text-color: whitesmoke;
-  --nav-bg-color: rgba(81,91,135,.8);
-  /* Pantone Ethereal Material Pallet: Marlin (#515B87) */
-  --bg-pattern-color: rgba(81,91,135,.2);
-  --primary-text-color: #515B87;
-}
+  /********************************
+   Color Pallet vars:
+  *********************************/
+/*   Accent color: Greenery #88B04B, 136,176,75 */
+/*   Header background color: #4e4e4f; */
+/*   Header text color color: whitesmoke */
+/*   Background color: Marlin #515B87, 81,91,135 */
 
 body {
   /* Reset */
   padding: 0;
   margin: 0;
-  min-height: 2000px;
+  min-height: 100vh;
   padding-top: 70px;
+  /* Following creates a grid background pattern */
+  /* Inspired by Lea Verou @ lea.verou.me/css3patterns */
+  /* "Blueprint grid (396 B)" */
   background-color: white;
-  color: var(--primary-text-color);
-  background-color: var(--bg-pattern-color);
+  background-color: rgba(81,91,135,.07);
   background-image:
     linear-gradient(white 2px, transparent 2px),
     linear-gradient(90deg, white 2px, transparent 2px),
     linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
   background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+  background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  color: #515B87;
+  font-family: 'Raleway', sans-serif;
 }
 
-/* header */
+h1 {
+  color: rgb(136,176,75);
+}
+
 header{
   padding: calc(4vw + 4vh) 0 0 0;
-  /* padding-top: 2.5vh;
-  padding-bottom: 2.5vh; */
-  background-color: var(--header-bg-color);
-  color: var(--primary-text-color);
+  color: #515B87;
+}
+
+#header {
+  background-color: #4e4e4f;
+  color: whitesmoke;
   text-align: center;
 }
 
-/* nav background on mobile */
-nav {
-  /* padding-top: 70px; */
-  background: #32a;
+#footer {
+  background-color: #4e4e4f;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-/* logo text */
+p, a {
+  font-size: 1.5em;
+}
 #logo {
-  font-family: var(--heading-font);
-  color: var(--accent-color);
   padding-top: calc(2vw + 2vh);
 }
 
 #logo-title {
+  font-family: 'Sansita', sans-serif;
+  color: rgba(136,176,75,1);
   font-size: 3.5em;
-  text-shadow: 4px 4px 4px #aaa;
+  text-shadow:
+  1px 1px 0 #CCC,
+  2px 2px 0 #CCC, /* end of 2 level deep grey shadow */
+  3px 3px 0 #444,
+  4px 4px 0 #444,
+  5px 5px 0 #444,
+  6px 6px 0 #444; /* end of 4 level deep dark shadow */
 }
 
 #logo-sub {
-  font-family: var(--text-font);
-  color: var(--primary-text-color);
+  font-family: 'Raleway', sans-serif;
+  color: whitesmoke;
+}
+
+/* Override Bootstrap values */
+.navbar-default .navbar-nav>li>a {
+    color: whitesmoke;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:active,
+.navbar-default .navbar-nav>li>a:visited {
+    color: rgba(136,176,75,.5);
 }
 
 #navbar {
-  font-family: var(--heading-font);
+  font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
-  background-color: var(--header-bg-color);
-  color: var(--header-text-color);
   padding-top: calc(2vw + 2vh);
   padding-bottom: calc(1vw + 1vh);
 }
 
-h1, h2, h3, h4, p {
-  font-family: var(--text-font);
-  color: var(--primary-text-color);
+.anchor {
+  display: block;
+  height: 15vh; /*same height as header*/
+  margin-top: -15vh; /*same height as header*/
+  visibility: hidden;
 }
 
-h1, h2, h3, h4 {
-  text-align: center;
+/**********************************************************     META ENTRIES
+      Code & CSS in this section heavily influenced by
+      MetaSean (http://metasean.info).
+**********************************************************/
+ul.meta, ul.meta li ul {
+    list-style: none;
 }
 
-/* links */
-a {
-  color: var(--primary-text-color);
+ul.meta {
+    padding: 0;
+    width: 100%;
 }
 
-/* nav link */
-nav a, nav a:visited {
-  color: var(--primary-text-color);
+ul.meta li {
+    margin: 0.5em 0;
+    width: 100%;
 }
 
-/* selected nav link */
-nav a.selected, nav a:hover {
-  color: var(--accent-color);
+ul.meta li a:link, ul.meta li a:visited, ul.meta li a:hover, ul.meta li a:active, ul.meta li a:link span.title, ul.meta li a:visited span.title {
+    padding: 0.15em 0.4em 0 0.4em;
+    margin: auto 0.2em auto 0;
+    /* slightly round the corners */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    /* future proofing */
+    -khtml-border-radius: 2px;
+    /* for old Konqueror browsers */
+    border: thin solid transparent;
+}
+
+ul.meta li a:link, ul.meta li a:visited, ul.meta li a:hover, ul.meta li a:active {
+    display: inline-block;
+    width: 100%;
+    /* font-size: 90%; */
+    text-decoration: none;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+ul.meta li a:link span.title, ul.meta li a:visited span.title {
+    display: inline-block;
+    width: 7em;
+    text-align: center;
+    vertical-align: top;
+    border: thin solid #4e4e4f;
+    background-color: #4e4e4f;
+    color: whitesmoke;
+}
+
+ul.meta li a:hover span.title, ul.meta li a:active span.title {
+    display: inline-block;
+    width: 7em;
+    text-align: center;
+    vertical-align: top;
+    background-color: #4e4e4f;
+    color: whitesmoke;
+}
+
+ul.meta li a span.text {
+    display: inline-block;
+    width: calc(100% - 7.5em);
+    vertical-align: bottom;
+}
+
+ul.meta li a:link, ul.meta li a:visited {
+    color: #4e4e4f;
+}
+
+ul.meta li a:hover, ul.meta li a:active {
+    background-color: rgba(81,91,135,.07);
+    color: #4e4e4f;
+    border: thin solid #4e4e4f;
+}
+
+.project-links {
+  display: inline-block;
+}
+
+@media only screen and (min-device-width: 480px) {
+  main {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
 }

@@ -9,6 +9,7 @@
   "author": "Joni Weiss",
   "license": "ISC",
   "devDependencies": {
+    "gulp": "^3.9.1",
     "webpack": "^2.2.1"
   }
 }
