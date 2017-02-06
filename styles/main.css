@@ -16,7 +16,7 @@ body {
   /* Inspired by Lea Verou @ lea.verou.me/css3patterns */
   /* "Blueprint grid (396 B)" */
   background-color: white;
-  background-color: rgba(81,91,135,.07);
+  background-color: rgba(81,91,135,1);
   background-image:
     linear-gradient(white 2px, transparent 2px),
     linear-gradient(90deg, white 2px, transparent 2px),
@@ -30,6 +30,11 @@ body {
 
 h1 {
   color: rgb(136,176,75);
+  line-height: 2;
+}
+
+p, a {
+  font-size: 1.2em;
 }
 
 /**********************************************************     Header Styles
@@ -56,17 +61,18 @@ header{
   color: rgba(136,176,75,1);
   font-size: 5vw;
   text-shadow:
-  1px 1px 0 #CCC,
-  2px 2px 0 #CCC, /* end of 2 level deep grey shadow */
-  3px 3px 0 #444,
-  4px 4px 0 #444,
-  5px 5px 0 #444,
-  6px 6px 0 #444; /* end of 4 level deep dark shadow */
+    1px 1px 0 rgba(204, 204, 204, 0.5),
+    2px 2px 0 rgba(204, 204, 204, 0.5),
+    3px 3px 0 rgba(68, 68, 68, 0.5),
+    4px 4px 0 rgba(68, 68, 68, 0.5),
+    5px 5px 0 rgba(68, 68, 68, 0.5),
+    6px 6px 0 rgba(68, 68, 68, 0.5);
 }
 
 #logo-sub {
   font-family: 'Raleway', sans-serif;
   color: whitesmoke;
+  font-size: 1.5vw;
 }
 
 /* Override Bootstrap values */
@@ -84,7 +90,7 @@ header{
 #navbar {
   font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
-  padding-top: 5vh;
+  padding-top: 5.5vh;
   padding-bottom: 2vh;
 }
 
@@ -95,33 +101,20 @@ header{
   }
 
   #logo {
-    padding-top: 0;
+    padding-top: 1vh;
   }
 
   #logo-title {
-    font-family: 'Sansita', sans-serif;
-    color: rgba(136,176,75,1);
-    font-size: 5vw;
-    text-shadow:
-    1px 1px 0 #CCC,
-    2px 2px 0 #CCC, /* end of 2 level deep grey shadow */
-    3px 3px 0 #444,
-    4px 4px 0 #444,
-    5px 5px 0 #444,
-    6px 6px 0 #444; /* end of 4 level deep dark shadow */
+    font-size: 5.5vh;
+  }
+
+  #logo-sub {
+    font-size: 2.2vh;
   }
 }
 
 /**********************************************************     Main Content Styles
 **********************************************************/
-p, a {
-  font-size: 1.5em;
-}
-
-main {
-  margin-left: 10vw;
-  margin-right: 10vw;
-}
 
 .anchor {
   display: block;
@@ -130,72 +123,96 @@ main {
   visibility: hidden;
 }
 
-/******************************************************         Main Content -- Meta Section
+section {
+  background-color: rgba(255,255,255,.9);
+  border-radius: 2px;
+  padding: 2.5vw 5vw 5vw 5vw;
+  margin: 2vh 0;
+}
+
+main {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+/******************************************************         Main Content -- List Common
       Code & CSS in this section heavily influenced by
       MetaSean (http://metasean.info).
 *******************************************************/
-ul.meta, ul.meta li ul {
+ul.meta, ul.meta li ul,
+ul.projects, ul.projects li ul {
     list-style: none;
 }
 
-ul.meta {
+ul.meta,
+ul.projects {
     padding: 0;
     width: 100%;
 }
 
-ul.meta li {
+ul.meta li,
+ul.projects li {
     margin: 0.5em 0;
     width: 100%;
 }
 
-ul.meta li a:link, ul.meta li a:visited, ul.meta li a:hover, ul.meta li a:active, ul.meta li a:link span.title, ul.meta li a:visited span.title {
-    padding: 0.15em 0.4em 0 0.4em;
-    margin: auto 0.2em auto 0;
-    /* slightly round the corners */
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    /* future proofing */
-    -khtml-border-radius: 2px;
-    /* for old Konqueror browsers */
-    border: thin solid transparent;
+ul.meta li a:link, ul.meta li a:visited, ul.meta li a:hover, ul.meta li a:active, ul.meta li a:link span.title, ul.meta li a:visited span.title,
+ul.projects li span.title {
+  padding: 0.15em 0.4em 0 0.4em;
+  margin: auto 0.2em auto 0;
+  /* slightly round the corners */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  /* future proofing */
+  -khtml-border-radius: 2px;
+  /* for old Konqueror browsers */
+  border: thin solid transparent;
 }
 
 ul.meta li a:link, ul.meta li a:visited, ul.meta li a:hover, ul.meta li a:active {
-    display: inline-block;
-    width: 100%;
-    /* font-size: 90%; */
-    text-decoration: none;
-    padding-left: 0;
-    padding-top: 0;
+  display: inline-block;
+  width: 100%;
+  /* font-size: 90%; */
+  text-decoration: none;
+  padding-left: 0;
+  padding-top: 0;
 }
 
-ul.meta li a:link span.title, ul.meta li a:visited span.title {
-    display: inline-block;
-    width: 30vw;
-    max-width: 7em;
-    text-align: center;
-    vertical-align: top;
-    border: thin solid #4e4e4f;
-    background-color: #4e4e4f;
-    color: whitesmoke;
+ul.meta li a:link span.title, ul.meta li a:visited span.title,
+ul.projects li span.title {
+  display: inline-block;
+  /* width: 30vw; */
+  /* max-width: 7em; */
+  text-align: center;
+  vertical-align: top;
+  border: thin solid #4e4e4f;
+  background-color: #4e4e4f;
+  color: whitesmoke;
 }
 
-ul.meta li a:hover span.title, ul.meta li a:active span.title {
-    display: inline-block;
-    width: 30vw;
-    max-width: 7em;
-    text-align: center;
-    vertical-align: top;
-    background-color: #4e4e4f;
-    color: whitesmoke;
+ul.meta li a:hover span.title, ul.meta li a:active span.title,
+ul.projects li span.title {
+  display: inline-block;
+  /* width: 30vw; */
+  /* max-width: 7em; */
+  text-align: center;
+  vertical-align: top;
+  background-color: #4e4e4f;
+  color: whitesmoke;
 }
 
-ul.meta li a span.text {
-    display: inline-block;
-    width: 50vw;
-    vertical-align: bottom;
+ul.meta li a span.text,
+ul.projects li span.text {
+  display: inline-block;
+  /* width: 50vw; */
+  vertical-align: bottom;
 }
+
+/******************************************************         Main Content -- Meta Section
+      Code & CSS in this section heavily influenced by
+      MetaSean (http://metasean.info).
+*******************************************************/
 
 ul.meta li a:link, ul.meta li a:visited {
     color: #4e4e4f;
@@ -209,6 +226,16 @@ ul.meta li a:hover, ul.meta li a:active {
 
 /******************************************************         Main Content -- Project Section
 *******************************************************/
+ul.projects li {
+  border: thin solid #4e4e4f;
+  border-radius: 2px;
+  padding-bottom: 2vh;
+  margin-bottom: 5vh;
+}
+
+ul.projects li span.title {
+  border-radius: 2px 2px 0 0;
+}
 .project-links {
   display: inline-block;
 }
