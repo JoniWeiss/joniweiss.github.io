@@ -9,7 +9,11 @@
   "author": "Joni Weiss",
   "license": "ISC",
   "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "grunt": "^1.0.1",
+    "grunt-sass": "^2.0.0",
     "gulp": "^3.9.1",
+    "load-grunt-tasks": "^3.5.2",
     "webpack": "^2.2.1"
   }
 }
