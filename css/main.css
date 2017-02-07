@@ -37,6 +37,14 @@ p, a {
   font-size: 1.2em;
 }
 
+
+@media only screen and (max-device-width: 900px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+
 /**********************************************************     Header Styles
 **********************************************************/
 
@@ -110,6 +118,10 @@ header{
 
   #logo-sub {
     font-size: 2.2vh;
+  }
+
+  div.navbar-header {
+    height: 70px;
   }
 }
 
