@@ -44,8 +44,18 @@ p, a {
   }
 }
 
+/*.row [class*="col-"]{*/
+  /*margin-bottom: -99999px;*/
+  /*padding-bottom: 99999px;*/
+/*}*/
 
-/**********************************************************     Header Styles
+/*.row{*/
+  /*overflow: hidden;*/
+/*}*/
+
+
+/**********************************************************
+ Header Styles
 **********************************************************/
 
 header{
@@ -125,7 +135,8 @@ header{
   }
 }
 
-/**********************************************************     Main Content Styles
+/**********************************************************
+ Main Content Styles
 **********************************************************/
 
 .anchor {
@@ -147,7 +158,8 @@ main {
   margin-right: 10vw;
 }
 
-/******************************************************         Main Content -- List Common
+/******************************************************
+ Main Content -- List Common
       Code & CSS in this section heavily influenced by
       MetaSean (http://metasean.info).
 *******************************************************/
@@ -165,7 +177,7 @@ ul.projects {
 ul.meta li,
 ul.projects li {
     margin: 0.5em 0;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 ul.meta li a:link, ul.meta li a:visited, ul.meta li a:hover, ul.meta li a:active, ul.meta li a:link span.title, ul.meta li a:visited span.title,
@@ -221,7 +233,8 @@ ul.projects li span.text {
   vertical-align: bottom;
 }
 
-/******************************************************         Main Content -- Meta Section
+/******************************************************
+ Main Content -- Meta Section
       Code & CSS in this section heavily influenced by
       MetaSean (http://metasean.info).
 *******************************************************/
@@ -236,13 +249,18 @@ ul.meta li a:hover, ul.meta li a:active {
     border: thin solid #4e4e4f;
 }
 
-/******************************************************         Main Content -- Project Section
+/******************************************************
+ Main Content -- Project Section
 *******************************************************/
 ul.projects li {
-  border: thin solid #4e4e4f;
-  border-radius: 2px;
+  /*border: thin solid #4e4e4f;*/
+  /*border-radius: 2px;*/
+    background-color: rgba(245,245,245,.9);
   padding-bottom: 2vh;
   margin-bottom: 5vh;
+    padding: 0;
+    margin-left: 5vh;
+    margin-right: 5vh;
 }
 
 ul.projects li span.title {
@@ -252,7 +270,14 @@ ul.projects li span.title {
   display: inline-block;
 }
 
-/**********************************************************     Footer Styles
+.project-image {
+    border: 1px solid #4e4e4f;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/**********************************************************
+ Footer Styles
 **********************************************************/
 #footer {
   background-color: #4e4e4f;
